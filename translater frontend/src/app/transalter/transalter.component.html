@@ -1,0 +1,68 @@
+<div class="cointainer">
+
+  
+      <form (ngSubmit)="translate()">
+        <div class="row">
+        <div class="col">
+        <mat-form-field>
+          <mat-label>Select Language</mat-label>
+          <mat-select [(ngModel)]="srclanguage" required name="srclanguage">
+            <mat-option *ngFor="let food of options" [value]="food.name">
+              {{ food.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Message</mat-label>
+            <textarea
+              matInput
+              maxlength="256"
+              name="message"
+              [(ngModel)]="message"
+              required
+              placeholder="Ex. I need help with..."
+            ></textarea>
+            <mat-hint align="end">{{ message.length }} / 256</mat-hint>
+          </mat-form-field>
+        </form>
+        <section>
+          <div class="example-button-row">
+            <button class="btn btn-primary" type="submit">translate</button>
+          </div>
+        </section>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Select Language</mat-label>
+          <mat-select
+            [(ngModel)]="targetlanguage"
+            required
+            name="targetlanguage"
+          >
+            <mat-option *ngFor="let food of options" [value]="food.name">
+              {{ food.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Message</mat-label>
+            <textarea
+              matInput
+              maxlength="256"
+              name="translatedmassage"
+              [(ngModel)]="translatedmassage"
+              required
+              placeholder="Ex. I need help with..."
+            ></textarea>
+            <mat-hint align="end">{{ message.length }} / 256</mat-hint>
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+      </form>
+
+  </div>
+
